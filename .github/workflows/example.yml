@@ -5,11 +5,15 @@ on: push
 jobs:
     testing_code:
         runs-on: ubuntu-latest
-        
-        steps:
 
-        - name: checkout
+        steps:
+        - name: checkout rpo code
+          uses: actions/checkout@v4    
+
+        - name: print
           run: echo "I am testing GHub actions"
 
         - name: List files
           run: ls
+        - name: read .md file
+          run: cat README.md
