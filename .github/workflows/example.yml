@@ -1,0 +1,15 @@
+name: tuna
+
+on: push
+
+jobs:
+    testing_code:
+        runs-on: ubuntu-latest
+        
+        steps:
+
+        - name: checkout
+          run: echo "I am testing GHub actions"
+
+        - name: List files
+          run: ls
