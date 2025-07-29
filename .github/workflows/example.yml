@@ -22,3 +22,5 @@ jobs:
           run: cat README.md
         - name: print dragon
           run: cowsay -f dragon "I am a dragon" >>dragon.txt  
+        - name: Reading file
+          run: cat dragon.txt
