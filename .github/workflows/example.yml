@@ -24,3 +24,7 @@ jobs:
           run: cowsay -f dragon "I am a dragon" >>dragon.txt  
         - name: Reading file
           run: cat dragon.txt
+        - name: Script execute
+          run : |
+             chmod +X script.sh
+             ./script.sh
