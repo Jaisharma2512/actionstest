@@ -13,7 +13,12 @@ jobs:
         - name: print
           run: echo "I am testing GHub actions"
 
+        - name: installing cowsay
+          run: sudo apt-get install cowsay -y  
+
         - name: List files
           run: ls
         - name: read .md file
           run: cat README.md
+        - name: print dragon
+          run: cowsay -f dragon "I am a dragon" >>dragon.txt  
