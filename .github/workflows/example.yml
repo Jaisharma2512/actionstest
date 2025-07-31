@@ -35,6 +35,7 @@ jobs:
 
 
     Locating:
+       needs: testing_code
        runs-on: ubuntu-latest
        steps:
          - uses: actions/download-artifact@v4
