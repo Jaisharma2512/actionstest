@@ -35,12 +35,12 @@ jobs:
 
 
     Locating:
-       needs: testing_code
+       needs: Viewing
        runs-on: ubuntu-latest
        steps:
          - uses: actions/download-artifact@v4
            with:
-             name: view buff art
+             name: Buff file
          - name: grepping
            run: grep 'cow' buff.txt
            
