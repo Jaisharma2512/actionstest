@@ -1,4 +1,4 @@
-name: tuna
+name: tuna-pipeline
 
 on: push
 
@@ -28,3 +28,14 @@ jobs:
           run : |
              chmod +x script.sh
              bash script.sh
+    Insertingasciiart:
+       runs-on: ubuntu-latest
+       steps:
+         - name:
+           run: cowsay -f cow "I am a bad cow" >> buff.txt
+
+    Viewing:
+       runs-on: ubuntu-latest
+       steps:
+         - name: view buff art
+           run: cat buff.txt
