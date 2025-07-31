@@ -32,3 +32,14 @@ jobs:
               name: Buff file
           - name: view buff art
             run: cat buff.txt
+
+
+    Locating:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/download-artifact@v4
+           with:
+             name: view buff art
+         - name: grepping
+           run: grep 'cow' buff.txt
+           
