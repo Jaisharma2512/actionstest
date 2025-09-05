@@ -8,39 +8,10 @@ jobs:
 
         steps:
         - name: checkout rpo code
-          uses: actions/checkout@v4    
+          uses: actions/checkout@v4
 
-        - name: print
-          run: echo "I am testing GHub actions"
-
-        - name: installing cowsay
-          run: sudo apt-get install cowsay -y  
-
-        - name: Uploading buff.txt
-          run: cowsay -f dragon "I am a bad cow" >> buff.txt
-        - uses: actions/upload-artifact@v4
+        - name: logging to dockerhub
+          uses: docker/login-action@v3
           with:
-              name: Buff file
-              path: buff.txt
-
-    Viewing:
-       needs: testing_code
-       runs-on: ubuntu-latest
-       steps:
-          - uses: actions/download-artifact@v4
-            with:
-              name: Buff file
-          - name: view buff art
-            run: cat buff.txt
-
-
-    Locating:
-       needs: Viewing
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/download-artifact@v4
-           with:
-             name: Buff file
-         - name: grepping
-           run: grep 'cow' buff.txt
-           
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
